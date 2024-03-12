@@ -1,0 +1,120 @@
+@import "widget";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+$cl_border: #CED5D9;
+.ct-wally.main-panel-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  border: 1px solid $cl_border;
+  border-radius: 12px;
+  z-index: 1000;
+
+  .header-panel {
+    height: 60px;
+    backdrop-filter: blur(15px) brightness(85%);
+    cursor: move;
+
+    .action-btn {
+
+      &.action-active {
+        background: #F3F5F5;
+      }
+    }
+
+  }
+
+  .content-panel {
+    padding: 20px;
+    backdrop-filter: blur(20px) brightness(95%);
+    height: 90%;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+
+  .footer-panel {
+    padding: 20px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+  }
+
+  &.maximize {
+    transform: none !important;
+    width: 100% !important;
+    height: 100% !important;
+    top: 0 !important;
+    left: 0 !important;
+    border-radius: 0;
+  }
+}
+
+::ng-deep {
+  .history-menu-wrapper {
+
+    .mat-mdc-menu-content {
+      padding: unset;
+
+      .mat-mdc-menu-item {
+        min-width: 200px;
+
+        .mat-mdc-menu-item-text {
+          display: flex;
+          gap: 12px;
+          align-items: center;
+        }
+
+        .menu-item-icon {
+          color: #00071F;
+        }
+      }
+    }
+
+  }
+}
+
+  .mat-mdc-menu-content {
+  padding: unset !important;
+
+  .mat-mdc-menu-item {
+    min-width: 200px;
+
+    &.radio-option {
+      //width: 320px;
+
+      .option-text {
+        width: 100%;
+      }
+
+      .grey-text {
+        color: #778491;
+      }
+    }
+
+    &:hover {
+      background-color: #F3F5F5 !important;
+    }
+
+    &.gear-active {
+
+      .mat-mdc-menu-item-text {
+        color: #4D9E64;
+      }
+    }
+
+    &.radio-active {
+      background-color: #F3F5F5;
+    }
+
+    .mat-mdc-menu-item-text {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .menu-item-icon {
+      color: #00071F;
+    }
+  }
+}
+
+

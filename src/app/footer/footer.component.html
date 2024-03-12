@@ -1,0 +1,46 @@
+<div class="footer-wrapper d-flex justify-content-between">
+  <div class="d-flex flex-column flex-gap-16px align-items-center justify-content-center mr-12px">
+    <i class="fa-solid fa-message-plus add-msg-icon font-size-28px" matTooltip="New Chat"
+       (click)="createNewConversation()"></i>
+    <button
+      class="action-btn"
+      [matMenuTriggerFor]="userMenuAction"
+      mat-icon-button
+      #userActionMenuBtn="matMenuTrigger"
+      [ngClass]="{'menu-active': userActionMenuBtn.menuOpened.closed}"
+      (click)="
+        userActionMenuBtn.menuOpened.closed = !userActionMenuBtn.menuOpened.closed;
+      "
+    >
+      <i class="fa-light fa-bars font-size-18px menu-icon pb-1"></i>
+    </button>
+    <mat-menu
+      #userMenuAction="matMenu"
+      xPosition="after"
+      yPosition="above"
+      (closed)="userActionMenuBtn.menuOpened.closed = !userActionMenuBtn.menuOpened.closed"
+    >
+      <button class=""
+              *ngFor="let action of userActionMenu"
+              (click)="userActionHandles(action.function)"
+              mat-menu-item
+
+      >
+        <div class="d-flex flex-gap-2 align-items-center">
+          <div></div>
+          <i [class]="action.icon + ' ' + 'menu-item-icon font-size-18px'"></i>
+          <div class="font-size-14px">{{ action.title }}</div>
+        </div>
+      </button>
+    </mat-menu>
+  </div>
+  <textarea class="chat-input flex-grow-1 p-12px"
+            placeholder="{{isDisabled?'Please create new chat':'Enter the name of your enquiry target'}}"
+            [(ngModel)]="chatMessage" [disabled]="isDisabled"></textarea>
+  <div class="pl-14px align-self-center" (click)="sendMessage()"
+       [class.disabled-half]="isDisabled">
+    <i class="fa-light fa-paper-plane send-icon"></i>
+  </div>
+</div>
+
+

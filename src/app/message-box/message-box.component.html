@@ -1,0 +1,83 @@
+<div class="message-box-wrapper">
+
+  <div class="message-box-content d-flex"
+       *ngFor="let conversation of data"
+  >
+    <!--TODO: can user change avt?-->
+    <div class="msg-avatar user" *ngIf="conversation.isUser">
+      <i class="fa-solid fa-user-vneck font-size-21px user-icon"></i>
+    </div>
+    <img class="mr-14px" width="36px" height="36px"
+         *ngIf="!conversation.isUser"
+         [src]="'data:image/png;base64,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'">
+    <div class="">
+      <div class="user-name" [ngClass]="{'assistant': !conversation.isUser}">
+        {{ conversation.isUser ? 'You' : 'Wally' }}
+      </div>
+      <div class="d-flex flex-column flex-gap-2">
+        <div class="message-response font-size-16px" *ngFor="let message of conversation.messages">
+          {{ message.content }}
+        </div>
+      </div>
+    </div>
+  </div>
+<!--  <hr>-->
+  <!--  <div class="message-box-content d-flex"
+         *ngFor="let response of ChatContent"
+    >
+      &lt;!&ndash;TODO: can user change avt?&ndash;&gt;
+      <div class="msg-avatar user" *ngIf="response.isUser">
+        <i class="fa-solid fa-user-vneck font-size-21px user-icon"></i>
+      </div>
+      <img class="mr-14px" width="36px" height="36px"
+           *ngIf="!response.isUser"
+           [src]="'data:image/png;base64,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'">
+      <div class="">
+        <p class="user-name" [ngClass]="{'assistant': !response.isUser}">
+          {{ response.isUser ? 'You' : 'Willy' }}
+        </p>
+
+        <ng-container *ngFor="let message of response.content">
+          <p class="message-response font-size-16px" *ngIf="!message.isImage">
+            {{ message.content }}
+          </p>
+          <img class="data-img mt-16px w-100" *ngIf="message.isImage" [src]="message.isImage && message.content">
+        </ng-container>
+      </div>
+    </div>
+
+    <div class="message-box-content d-flex">
+      <img class="mr-14px" width="36px" height="36px"
+           src="data:image/png;base64,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">
+      <div class="">
+        <p class="user-name assistant">
+          Wally
+        </p>
+        <p class="message-response font-size-16px pb-30px">
+          Let me pull some data so I can better address your question.
+        </p>
+
+
+        &lt;!&ndash;Loading&ndash;&gt;
+        <div class="loading-data-status d-flex flex-gap-12px mb-16px font-size-16px align-items-center">
+          <i class="fa-solid fa-circle-check success-icon"></i>
+          <div>
+            <p class="loading-text font-size-16px">Determining data scope</p>
+          </div>
+
+        </div>
+        &lt;!&ndash;Load success&ndash;&gt;
+        <div class="loading-data-status d-flex flex-gap-12px mb-16px font-size-16px align-items-center">
+          <i class="fa-light fa-spinner loading-data-icon"></i>
+          <p class="loading-text font-size-16px">Processing data</p>
+        </div>
+
+        &lt;!&ndash;Running status&ndash;&gt;
+        <div class="loading-data-status d-flex flex-gap-12px mb-16px font-size-16px align-items-center">
+          <i class="fa-solid fa-circle-check invisible"></i>
+          <p class="loading-text font-size-16px">Running analytics</p>
+        </div>
+
+      </div>
+    </div>-->
+</div>

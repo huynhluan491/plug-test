@@ -1,0 +1,39 @@
+<mat-drawer-container class="history-drawer-container">
+  <mat-drawer #drawer mode="over" [tabIndex]="5" (closed)="isHistoryOpened = false" [opened]="isHistoryOpened">
+    <div class="w-100 text-right px-16px">
+      <i class="fa-regular fa-xmark close-icon font-size-18px" (click)="isHistoryOpened = false"></i>
+    </div>
+    <div class="search-bar-wrapper d-flex align-items-center flex-gap-12px mx-16px">
+      <div>
+        <i class="fa-light fa-magnifying-glass search-icon font-size-18px"></i>
+      </div>
+      <input class="search-input" placeholder="Search">
+    </div>
+
+    <p class="section-title p-16px font-size-12px">History</p>
+    <div class="history-list-wrapper">
+      <div
+        class="history-item-wrapper px-16px d-flex align-items-center justify-content-between"
+        *ngFor="let history of conversationHistoryList"
+      >
+        <div
+          class="d-flex flex-column flex-gap-4px"
+        >
+          <p class="font-size-16px">{{ history.title }}</p>
+          <p class="history-date font-size-16px">{{ history.createdAt }}</p>
+        </div>
+        <div>
+          <button mat-button [matMenuTriggerFor]="menu">
+            <i class="fa-regular fa-ellipsis-vertical"></i>
+          </button>
+          <mat-menu class="history-menu-wrapper" #menu="matMenu" xPosition="before">
+            <button class="gear-option-item" mat-menu-item *ngFor="let item of historyMenuList">
+              <i [class]="item.icon + ' ' + 'menu-item-icon font-size-18px'"></i>
+              <p class="font-size-14px">{{ item.title }}</p>
+            </button>
+          </mat-menu>
+        </div>
+      </div>
+    </div>
+  </mat-drawer>
+</mat-drawer-container>

@@ -1,0 +1,35 @@
+<section>
+  <div class="mat-subtitle-1">
+    Angular micro frontend template with Angular material
+  </div>
+  <div class="mat-body-1">Buttons as demo</div>
+  <div>
+    <button mat-raised-button>Basic</button>
+    <button mat-raised-button color="primary">Primary</button>
+    <button mat-raised-button color="accent">Accent</button>
+    <button mat-raised-button color="warn">Warn</button>
+    <button mat-raised-button disabled>Disabled</button>
+    <a
+      mat-raised-button
+      class="buttonGoogle"
+      href="https://www.google.com/"
+      target="_blank"
+      >Link</a
+    >
+  </div>
+</section>
+
+<button mat-button [matMenuTriggerFor]="menu">Menu</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button>
+</mat-menu>
+
+<mat-selection-list #shoes>
+  <mat-list-option *ngFor="let shoe of typesOfShoes">
+    {{ shoe }}
+  </mat-list-option>
+</mat-selection-list>
+
+<p>Options selected: {{ shoes.selectedOptions.selected.length }}</p>
+<app-main-panel></app-main-panel>

@@ -1,0 +1,46 @@
+@import "widget";
+
+.footer-wrapper {
+  .add-msg-icon {
+    color: #4D9E64;
+    cursor: pointer;
+  }
+
+  .menu-icon {
+    color: #00071F;
+    cursor: pointer;
+  }
+
+  .chat-input {
+    resize: none;
+    height: 100%;
+    background: #F5F7F9 0% 0% no-repeat padding-box;
+    border-radius: 8px;
+    border: unset;
+    width: 100%;
+    color: #00071F;
+    height: 88px;
+    font-size: 16px;
+
+    &::placeholder {
+      color: #778491;
+    }
+  }
+
+  .send-icon {
+    font-size: 18px;
+    color: #778491;
+    cursor: pointer;
+  }
+
+  .action-btn {
+
+    &:hover {
+      background-color: #F3F5F5;
+    }
+
+    &.menu-active {
+     background-color: #F3F5F5;
+    }
+  }
+}

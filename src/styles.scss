@@ -1,0 +1,108 @@
+@use "@angular/material" as mat;
+@import "node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
+@import "node_modules/@fortawesome/fontawesome-pro/css/all.css";
+@import "node_modules/tql-theme/scss/theme";
+@import "node_modules/tql-theme/scss/functions";
+//$template-palette: (
+//  50: #ecedf5,
+//  100: #cfd4e0,
+//  200: #b2b8c8,
+//  300: #949cb0,
+//  400: #7e869d,
+//  500: #68728c,
+//  600: #5a647b,
+//  700: #495165,
+//  800: #393f4f,
+//  900: #262b38,
+//  A100: #f5cbd5,
+//  A200: #e196a0,
+//  A300: #d36e7c,
+//  A400: #dd4c60,
+//  A500: #e2384a,
+//  A600: #d23048,
+//  A700: #c02741,
+//  A800: #b32139,
+//  A900: #a3172f,
+//  contrast: (
+//    50: rgba(black, 0.87),
+//    100: rgba(black, 0.87),
+//    200: rgba(black, 0.87),
+//    300: white,
+//  ),
+//);
+//
+//$my-primary: mat.define-palette($template-palette, A900);
+//$my-accent: mat.define-palette($template-palette, 500);
+//
+//$my-typography: mat.define-typography-config();
+//@include mat.typography-hierarchy($my-typography);
+//
+//// The "warn" palette is optional and defaults to red if not specified.
+//$my-warn: mat.define-palette(mat.$red-palette);
+//
+//// $my-theme: mat.define-light-theme((
+////  color: (
+////    primary: $my-primary,
+////    accent: $my-accent,
+////    warn: $my-warn,
+////  ),
+////  typography: mat.define-typography-config(),
+////  density: 0,
+//// ));
+//
+//// Emit theme-dependent styles for common features used across multiple components.
+//// @include mat.core-theme($my-theme);
+//
+//// Emit styles for MatButton based on `$my-theme`. Because the configuration
+//// passed to `define-light-theme` omits typography, `button-theme` will not
+//// emit any typography styles.
+//// @include mat.button-theme($my-theme);
+//
+//.mdc-button {
+//  overflow: hidden !important;
+//}
+
+.mat-mdc-menu-content {
+  padding: unset !important;
+
+  .mat-mdc-menu-item {
+    min-width: 200px;
+
+    &.radio-option {
+      //width: 320px;
+
+      .option-text {
+        width: 100%;
+      }
+
+      .grey-text {
+        color: #778491;
+      }
+    }
+
+    &:hover {
+      background-color: #F3F5F5 !important;
+    }
+
+    &.gear-active {
+
+      .mat-mdc-menu-item-text {
+        color: #4D9E64;
+      }
+    }
+
+    &.radio-active {
+      background-color: #F3F5F5;
+    }
+
+    .mat-mdc-menu-item-text {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .menu-item-icon {
+      color: #00071F;
+    }
+  }
+}
